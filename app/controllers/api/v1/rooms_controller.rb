@@ -1,4 +1,4 @@
-class Api::v1::RoomsController < ApplicationController
+class Api::V1::RoomsController < ApplicationController
 
   def index
     if !params[:address].blank?
@@ -20,7 +20,7 @@ class Api::v1::RoomsController < ApplicationController
           
         #this will check the host calender to see if there are unavailable days within your search dates
         calendars = Calendar.where(
-            "roomd_id = ? AND status = ? and day BETWEEN ? AND ?",
+            "room_id = ? AND status = ? and day BETWEEN ? AND ?",
             room.id, 1, start_date, end_date
           ).count 
 
