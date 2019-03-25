@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2019_03_25_211822) do
     t.datetime "updated_at", null: false
     t.string "image_file_name"
     t.string "image_content_type"
-    t.integer "image_file_size"
+    t.bigint "image_file_size"
     t.datetime "image_updated_at"
     t.index ["room_id"], name: "index_photos_on_room_id"
   end

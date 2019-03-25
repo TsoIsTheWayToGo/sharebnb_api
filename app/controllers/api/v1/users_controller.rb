@@ -1,5 +1,5 @@
-class API::V1::UsersController < ApplicationController
-  before_action : authenticate_with_token!, only: [:logout]
+class Api::V1::UsersController < ApplicationController
+  before_action :authenticate_with_token!, only: [:logout]
 
   def facebook
     if params[:facebook_access_token]
