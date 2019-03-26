@@ -17,3 +17,4 @@ class RoomSerializer < ActiveModel::Serializer
 
   belongs_to :user, serializer: UserSerializer, key: :host
 end
+def
