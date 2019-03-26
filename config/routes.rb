@@ -5,8 +5,14 @@ Rails.application.routes.draw do
       get '/logout' => 'users#logout'
       post '/facebook' => 'users#facebook'
       post '/payments' => 'users#add_card'
+      get '/listings' => 'rooms#your_listings'
+      
+      resources :rooms do
+        member do
+        get '/reservations' => 'reservations#reservations_by_room'
+        end
+      end
 
-      resources :rooms
       resources :reservations
     end
 
