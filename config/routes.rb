@@ -13,7 +13,12 @@ Rails.application.routes.draw do
         end
       end
 
-      resources :reservations
+      resources :reservations do
+        member do
+          post '/approve' => 'reservations#approve'
+          post '/decline' => 'reservations#decline'
+        end
+      end
     end
 
   end
